@@ -1,0 +1,83 @@
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-hgjwr[0m
+{"level":"warn","ts":1579815907.8905377,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579815907.8913572,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-cv99n[0m
+{"level":"warn","ts":1579815909.6597414,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1579815909.6613095,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-jr1-palmlace-master-xqsmn[0m
+{"level":"warn","ts":1579815997.5049448,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579815998.7282827,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/jr1-palmlace.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/jr1-palmlace main.go
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/jr1-palmlace"]                 
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+ERROR: logging before flag.Parse: E0123 21:46:48.057247      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0123 21:46:48.062630      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2020/01/23 21:46:52 pushed blob: sha256:9d2c5546d541353013c917ef4733f45a5b1dc81a42f70417c922b86f24f8c7e9
+2020/01/23 21:46:52 pushed blob: sha256:bfcd3de0f0f6732556d86775ae1b84fbb3c6e0fbadfbb87107b39b00f1952032
+2020/01/23 21:46:54 gcr.io/**-development/jr1-palmlace:0.0.1: digest: sha256:68734287dfe9ea7c26c1d11a77fb92e407343305e03e9e4668e4e73f1059f63c size: 428
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/jr1-palmlace to an unshallow repository
+Generating change log from git ref 71479e25eaee7a78a67a6ca7cba7800b5eef9dd0 => 436a56ffcbcfd6a92f7dc5ffc7b57623e09c032c
+Associating user x-0 in users.jenkins.io with email rawlingsj80@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 46886ec61967baf2227a01c736065fab838bd44e with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/jr1-palmlace and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/jr1-palmlace/releases/tag/v0.0.1
+generated: /workspace/source/charts/jr1-palmlace/templates/release.yaml
+Created Release jr1-palmlace-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-jr1-palmlace-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-jr1-palmlace-master-1 with release notes URL: https://github.com/cb-kubecd/jr1-palmlace/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file jr1-palmlace-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-jr1-palmlace-master-krh6n-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app jr1-palmlace version 0.0.1 to namespace **-staging
+WARNING: Waiting for the fork of ******************/environment-palmlace-staging to appear...
+Forked Git repository to https://github.com/******************/environment-palmlace-staging
+Created Pull Request: https://github.com/cb-kubecd/environment-palmlace-staging/pull/1
+error: Timed out waiting for pull request https://github.com/cb-kubecd/environment-palmlace-staging/pull/1 to merge. Waited 1h0m0s
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
